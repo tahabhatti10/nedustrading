@@ -1,0 +1,31 @@
+{
+  "name": "nedustrading",
+  "version": "1.0.0",
+  "description": "Nedus Trading - Guangzhou Sourcing & Shipping Agent",
+  "main": "index.js",
+  "scripts": {
+    "dev": "python3 dev-server.py",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahabhatti10/nedustrading.git"
+  },
+  "keywords": [
+    "nedus",
+    "trading",
+    "guangzhou",
+    "sourcing",
+    "china",
+    "shipping"
+  ],
+  "author": "Nedus Guangzhou Trading Co. Ltd.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahabhatti10/nedustrading/issues"
+  },
+  "homepage": "https://github.com/tahabhatti10/nedustrading#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

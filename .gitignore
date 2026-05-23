@@ -15,3 +15,6 @@ Desktop.ini
 # Temporary/Log Files
 *.log
 trim_logo.ps1
+
+# Dependencies
+node_modules/
