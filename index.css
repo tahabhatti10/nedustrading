@@ -361,6 +361,10 @@ section {
     gap: 1rem;
 }
 
+.mobile-nav-cta {
+    display: none !important;
+}
+
 .mobile-toggle {
     display: none;
     background: none;
@@ -1094,7 +1098,8 @@ select.form-input {
 .card-scene {
     width: 100%;
     max-width: 400px;
-    height: 228px; /* Maintain standard business card ratio 1.75 : 1 */
+    aspect-ratio: 1.75 / 1;
+    height: auto;
     margin: 0 auto 3rem auto;
     perspective: 1200px;
 }
@@ -1108,8 +1113,15 @@ select.form-input {
     cursor: pointer;
 }
 
-/* Hover or class trigger will flip the card */
-.card-scene:hover .card-3d, .card-3d.flipped {
+/* Desktop Hover flip (only on hover-capable devices) */
+@media (hover: hover) {
+    .card-scene:hover .card-3d {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Click/Tap flip (class-based trigger) */
+.card-3d.flipped {
     transform: rotateY(180deg);
 }
 
@@ -1490,6 +1502,10 @@ select.form-input {
         display: block;
     }
     
+    .nav-actions .btn-primary {
+        display: none;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -1504,6 +1520,13 @@ select.form-input {
         gap: 2.5rem;
         transition: var(--transition-normal);
         backdrop-filter: blur(12px);
+    }
+    
+    .nav-menu .mobile-nav-cta {
+        display: flex !important;
+        width: 80%;
+        margin-top: 1rem;
+        justify-content: center;
     }
     
     .navbar.scrolled .nav-menu {
@@ -1529,6 +1552,10 @@ select.form-input {
         width: calc(50% - 0.5rem);
     }
     
+    .service-image-box {
+        height: 240px;
+    }
+    
     .bento-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
@@ -1542,7 +1569,7 @@ select.form-input {
     
     .calculator-card { padding: 1.5rem; }
     
-    .input-group-row, .input-group-row-triple, .form-row {
+    .input-group-row, .form-row {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
@@ -1567,12 +1594,7 @@ select.form-input {
         width: 100%;
     }
     
-    .card-scene {
-        height: 194px; /* Scaling down for small screens, retaining aspect ratio */
-    }
-    
-    .qr-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .input-group-row-triple {
+        gap: 0.5rem;
     }
 }
